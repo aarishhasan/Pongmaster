@@ -2,17 +2,15 @@
   position: relative;
 }
 
-/* Updated styles for the ball and rods */
+/* Updated styles for the ball and rods using CSS shapes */
 #ball {
   width: 20px;
   height: 20px;
-  background-color: transparent;
+  background-color: red;
   position: fixed;
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  background-image: url('ball.png'); /* Replace 'ball.png' with your ball image */
-  background-size: cover;
   transform: translate(-50%, -50%);
 }
 
@@ -21,13 +19,17 @@
   height: 20px;
   position: fixed;
   left: 50%;
+  background-color: blueviolet; /* Rod 1 color */
   border-radius: 25px;
   text-align: center;
   font-weight: bolder;
   color: white;
-  background-image: url('rod.png'); /* Replace 'rod.png' with your rod image */
-  background-size: cover;
   transform: translateX(-50%);
+}
+
+#rod2 {
+  background-color: teal; /* Rod 2 color */
+  bottom: 0;
 }
 
 /* Particle effects for ball collisions */
@@ -51,4 +53,5 @@
     transform: scale(1.5);
   }
 }
+
 
