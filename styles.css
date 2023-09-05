@@ -2,56 +2,33 @@
   position: relative;
 }
 
-/* Updated styles for the ball and rods using CSS shapes */
-#ball {
+#ball{
   width: 20px;
   height: 20px;
   background-color: red;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 20px;
+  left: 52.5%;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
 }
 
-#rod1, #rod2 {
+#rod1, #rod2{
   width: 200px;
   height: 20px;
   position: fixed;
   left: 50%;
-  background-color: blueviolet; /* Rod 1 color */
   border-radius: 25px;
   text-align: center;
   font-weight: bolder;
   color: white;
-  transform: translateX(-50%);
 }
 
-#rod2 {
-  background-color: teal; /* Rod 2 color */
-  bottom: 0;
+#rod1{
+  background-color: blueviolet;
+  top: 0px;
 }
 
-/* Particle effects for ball collisions */
-.particle {
-  width: 5px;
-  height: 5px;
-  background-color: #FFF; /* Particle color */
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: particle-animation 1s ease-out forwards;
+#rod2{
+  background-color: teal;
+  bottom: 0px;
 }
-
-@keyframes particle-animation {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.5);
-  }
-}
-
-
