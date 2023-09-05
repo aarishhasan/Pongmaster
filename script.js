@@ -129,3 +129,60 @@ window.addEventListener('keypress',function(){
         }
     }
 });
+
+// Updated script.js with visual and sound effects
+
+// ... (your existing code) ...
+
+// Add a new function to create particles at collision points
+function createParticle(x, y) {
+  const particle = document.createElement('div');
+  particle.className = 'particle';
+  particle.style.left = x + 'px';
+  particle.style.top = y + 'px';
+  document.body.appendChild(particle);
+
+  setTimeout(() => {
+    particle.remove();
+  }, 1000); // Remove particles after 1 second
+}
+
+// Function to play a collision sound effect
+function playCollisionSound() {
+  const audio = new Audio('collision.mp3'); // Replace 'collision.mp3' with your sound effect
+  audio.play();
+}
+
+// ... (your existing code) ...
+
+// Inside the collision check for Rod 1
+if (ballY <= rod1Height) {
+  ballSpeedY = -1 * ballSpeedY;
+  score++;
+
+  // Create particles and play collision sound
+  createParticle(ballX, ballY);
+  playCollisionSound();
+
+  // Check if the game end
+  if (ballPos < rod1X || ballPos > rod1X + rod1Width) {
+    storeWin(rod2Name, score);
+  }
+}
+
+// Inside the collision check for Rod 2
+else if (ballY + ballDia >= windowHeight - rod2Height) {
+  ballSpeedY = -1 * ballSpeedY;
+  score++;
+
+  // Create particles and play collision sound
+  createParticle(ballX, ballY + ballDia);
+  playCollisionSound();
+
+  if (ballPos < rod2X || ballPos > rod2X + rod2Width) {
+    storeWin(rod1Name, score);
+  }
+}
+
+// ... (your existing code) ...
+
